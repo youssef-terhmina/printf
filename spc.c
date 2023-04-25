@@ -8,6 +8,7 @@
  */
 
 int (*get_specifier(char *s))(va_list printl, flags_t *flags)
+
 {
 	spf_t specifiers[] = {
 		{"c", print_char},
@@ -20,7 +21,7 @@ int (*get_specifier(char *s))(va_list printl, flags_t *flags)
 		{"u", print_unsigned},
 		{"x", print_hex},
 		{"X", print_HEX},
-		{"p", print_addreee},
+		{"p", print_address},
 		{"S", print_S},
 		{"r", print_rev},
 		{"R", print_rot13},
@@ -102,7 +103,7 @@ int get_modifier(char *s, flags_t *flags)
  *
  * Return: new pointer
  */
-char *get_width(char *s, flags_t *flags, va_list printl)
+char *get_width(char *s, va_list printl, flags_t *flags)
 {
 	int d = 0;
 

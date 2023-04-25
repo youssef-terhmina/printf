@@ -28,4 +28,3 @@ char *get_precision(char *p, flags_t *flags, va_list printl)
 	flags->precision = d;
 	return (p);
 }
-

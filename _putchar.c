@@ -8,9 +8,9 @@ int _puts(char *s)
 {
 	char *str = s; /* pointer to pointer lol */
 
-	while (*s != NULL) /* if the character pointed is not nul */
+	while (*s != '\0') /* if the character pointed is not nul */
 		_putchar(*s++); /* print it and pass to the next char of the string */
-	return (s - str); /* last char pointed minus the first one to give the lenghts */
+	return (s - str); /* to give the lenghts */
 }
 /**
  * _putchar - to write each character
@@ -20,7 +20,7 @@ int _puts(char *s)
 int _putchar(int c)
 {
 	static int x; /* number of bytes to be printed */
-	static char adr[BUF_ZISE]; /* Partner wrote it wrong, so be it, its for the 1024 chars buffer adress*/
+	static char adr[BUF_ZISE]; /* for the 1024 chars buffer adress*/
 
 	if (c > -1)
 		adr[x++] = c;

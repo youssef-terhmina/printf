@@ -9,7 +9,7 @@
 #define BUF_ZISE 1024
 #define BUF_FLSH -1
 #define NULL_STR "(null)"
-#define FLAGS_INIT (0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+#define FLAGS_INIT {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
 #define CNV_LC 1
 #define CNV_UNS 2
 
@@ -42,7 +42,7 @@ typedef struct flags
 	unsigned int precision;
 	unsigned int zero_f     : 1;
 	unsigned int minus_f    : 1;
-} flags_t
+} flags_t;
 
 /**
  * struct spf - struct token
