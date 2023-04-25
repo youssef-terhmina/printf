@@ -17,5 +17,5 @@ void init_flags(flags_t *flags, va_list printl)
 	flags->zero_f = 0;
 	flags->minus_f = 0;
 	flags->precision = UINT_MAX;
-	(void)flags;
+	(void)printl;
 }
