@@ -47,3 +47,12 @@ int _printf(const char *format, ...)
 	va_end(printl);
 	return (printall);
 }
+/**
+ * main - function
+ * Return: 0
+ */
+int main(void)
+{
+	printf("Just compile pls'\n'");
+	return 0;
+}
