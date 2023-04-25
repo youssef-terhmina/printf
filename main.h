@@ -9,7 +9,7 @@
 #define BUF_ZISE 1024
 #define BUF_FLSH -1
 #define NULL_STR "(null)"
-#define PRM_INIT (0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+#define FLAGS_INIT (0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 #define CNV_LC 1
 #define CNV_UNS 2
 
@@ -103,7 +103,7 @@ int print_number_right_shift(char *str, flags_t *flags);
 int print_number_left_shift(char *str, flags_t *flags);
 
 /* flags.c */
-void init_params(flags_t *flags, va_list printl);
+void init_flags(flags_t *flags, va_list printl);
 
 /* string_fields.c */
 char *get_precision(char *p, flags_t *flags, va_list printl);
