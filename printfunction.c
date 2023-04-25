@@ -19,8 +19,7 @@ int _printf(const char *format, ...)
 		return (-1);
 	if (format[0] == '%' && format[1] == ' ' && format[2] == '\0')
 		return (-1);
-	point = (char *)format;
-	while (*point != '\0') /* if the function pointer was not null */
+	for (point = (char *)format; *point != '\0'; point++)
 	{
 		init_flags(&flags, printl); /* initialize the flags defined previously */
 		if (*point != '%') /* if it does not start with the specifier sign */
@@ -41,7 +40,6 @@ int _printf(const char *format, ...)
 					flags.long_m || flags.short_m ? point - 1 : 0);
 		else
 			printall += get_print_func(point, printl, &flags);
-		point++;
 	}
 	_putchar(BUF_FLSH);
 	va_end(printl);
