@@ -22,12 +22,14 @@ int _putchar(int c)
 	static int x; /* number of bytes to be printed */
 	static char adr[BUF_ZISE]; /* for the 1024 chars buffer adress*/
 
-	if (c > -1)
-		adr[x++] = c;
-	if (c)
+	if (c == BUF_FLSH || x >= BUF_ZISE)
 	{
 		write(1, adr, x);
 		x = 0;
+	}
+	if (c != BUF_FLSH)
+	{
+		adr[x++] = c;
 	}
 	return (1);
 }
