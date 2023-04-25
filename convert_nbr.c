@@ -20,7 +20,7 @@ int print_hex(va_list printl, flags_t *flags)
 	else
 		l = (unsigned int)va_arg(printl, unsigned int);
 
-	str = convert(l, 16, CONVERT_UNSIGNED | CONVERT_LOWERCASE, flags);
+	str = convert(l, 16, CNV_UNS | CNV_LC, flags);
 	if (flags->hashtag_f && l)
 	{
 		*--str = 'x';
@@ -50,7 +50,7 @@ int print_HEX(va_list printl, flags_t *flags)
 	else
 		l = (unsigned int)va_arg(printl, unsigned int);
 
-	str = convert(l, 16, CONVERT_UNSIGNED, flags);
+	str = convert(l, 16, CNV_UNS, flags);
 	if (flags->hashtag_f && l)
 	{
 		*--str = 'X';
@@ -69,7 +69,7 @@ int print_HEX(va_list printl, flags_t *flags)
 int print_binary(va_list printl, flags_t *flags)
 {
 	unsigned int n = va_arg(printl, unsigned int);
-	char *str = convert(n, 2, CONVERT_UNSIGNED, flags);
+	char *str = convert(n, 2, CNV_UNS, flags);
 	int c = 0;
 
 	if (flags->hashtag_f && n)
@@ -97,7 +97,7 @@ int print_octal(va_list printl, flags_t *flags)
 		l = (unsigned short int)va_arg(printl, unsigned int);
 	else
 		l = (unsigned int)va_arg(printl, unsigned int);
-	str = convert(l, 8, CONVERT_UNSIGNED, flags);
+	str = convert(l, 8, CNV_UNS, flags);
 
 	if (flags->hashtag_f && l)
 		*--str = '0';

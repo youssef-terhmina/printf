@@ -1,4 +1,5 @@
 #ifndef MAIN_H
+
 #define MAIN_H
 #include <stdarg.h>
 #include <stdio.h>
@@ -58,54 +59,36 @@ typedef struct spf
 	int (*f)(va_list, flags_t *);
 } spf_t;
 
-/*_printf.c */
+/* prototypes */
 int _printf(const char *format, ...);
-
-/*print_functions.c*/
 int print_char(va_list printl, flags_t *flags);
 int print_string(va_list printl, flags_t *flags);
 int print_percent(va_list printl, flags_t *flags);
 int print_int(va_list printl, flags_t *flags);
 int print_S(va_list printl, flags_t *flags);
-
-/*convert_number.c*/
 int print_binary(va_list printl, flags_t *flags);
 int print_hex(va_list printl, flags_t *flags);
 int print_HEX(va_list printl, flags_t *flags);
 int print_octal(va_list printl, flags_t *flags);
-
-/* number.c*/
 int print_unsigned(va_list printl, flags_t *flags);
 int print_address(va_list printl, flags_t *flags);
 char *convert(long int nb, int bs, int fl, flags_t *flags);
-
-/* simple_printers.c */
 int print_rev(va_list printl, flags_t *flags);
 int print_rot13(va_list printl, flags_t *flags);
 int print_from_to(char *start, char *stop, char *except);
-
-/* _put.c */
 int _puts(char *str);
 int _putchar(int c);
-
-/* specifier.c */
 int (*get_specifier(char *s))(va_list printl, flags_t *flags);
 int get_print_func(char *s, va_list printl, flags_t *flags);
 int get_flag(char *s, flags_t *flags);
 int get_modifier(char *s, flags_t *flags);
 char *get_width(char *s, va_list printl, flags_t *flags);
-
-/* print_number.c */
 int _isdigit(int c);
 int _strlen(char *s);
 int print_number(char *str, flags_t *flags);
 int print_number_right_shift(char *str, flags_t *flags);
 int print_number_left_shift(char *str, flags_t *flags);
-
-/* flags.c */
 void init_flags(flags_t *flags, va_list printl);
-
-/* string_fields.c */
 char *get_precision(char *p, flags_t *flags, va_list printl);
 
 #endif

@@ -38,7 +38,21 @@ int (*get_specifier(char *s))(va_list printl, flags_t *flags)
 	}
 	return (NULL);
 }
+/**
+ * get_print_func - finds the format func
+ * @s: the format string
+ * @printl: valist
+ * @flags: struct
+ * Return: the number of bytes printed
+ */
+int get_print_func(char *s, va_list printl, flags_t *flags)
+{
+	int (*fct)(va_list, flags_t *) = get_specifier(s);
 
+	if (fct)
+		return (fct(printl, flags));
+	return (0);
+}
 /**
  * get_flag - get function flag
  * @s: string format
